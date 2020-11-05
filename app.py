@@ -7,13 +7,12 @@ from wtforms.validators import InputRequired, Email, Length
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Thisissupposedtobesecret!'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://mani:mani76922@@localhost/dbb'
-engine = sqlalchemy.create_engine('mysql+mysqlconnector://mani:mani76922@@localhost/dbb')  # connect to server
-engine.execute("CREATE DATABASE IF NOT EXISTS dbb")  # create db
-engine.execute("USE dbb")
+app.config['SQLALCHEMY_DATABASE_URI'] ='mysql+pymysql://sql12374717:XIDKAckd2g@sql12.freemysqlhosting.net:3306/sql12374717'
+engine = sqlalchemy.create_engine('mysql+pymysql://sql12374717:XIDKAckd2g@sql12.freemysqlhosting.net:3306/sql12374717')  # connect to server
+engine.execute("CREATE DATABASE IF NOT EXISTS sql12374717")  # create db
+engine.execute("USE sql12374717")
 bootstrap = Bootstrap(app)
 db = SQLAlchemy(app)
 login_manager = LoginManager()
